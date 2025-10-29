@@ -1,0 +1,8 @@
+1 SELECT track,
+2        CASE
+3           WHEN finished = true THEN 2
+4           WHEN cancelled = true THEN -1
+5           WHEN "inDelivery" = true THEN 1
+6           ELSE 0
+7        END AS status
+8 FROM "Orders";
