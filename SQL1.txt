@@ -1,0 +1,6 @@
+1 SELECT c.login,
+2        COUNT(o.*) AS order_count
+3 FROM "Couriers" AS c
+4 JOIN "Orders" AS o ON c.id=o."courierId"
+5 WHERE o."inDelivery" = true
+6 GROUP BY c.login;
